@@ -24,6 +24,23 @@ public class Program
         
 
 		TestGetPrefCodeFromKey("marketingpreferenceTest_1_115_0_0_2_attr", "marketingpreferenceTest_1");
+
+		TestGetPrefCodeFromKey("marketingpreferenceemail_107_0_692313_2_attr", "marketingpreferenceemail");
+        TestGetPrefCodeFromKey("marketingpreferenceTest_1_115_0_0_2_attr", "marketingpreferenceTest_1");
+        TestGetPrefCodeFromKey("Testmanual_116_0_692460_2_attr", "Testmanual");
+        TestGetPrefCodeFromKey("marketingpreferencetopicsofinterest_109_0_0_2_attr", "marketingpreferencetopicsofinterest");
+        TestGetPrefCodeFromKey("marketingpreferenceoffers_122_0_0_2_attr", "marketingpreferenceoffers");
+        TestGetPrefCodeFromKey("marketingpreferenceMagzines_119_121_692414_2_attr", "marketingpreferenceMagzines");
+        TestGetPrefCodeFromKey("marketingpreferenceTest_113_0_692408_2_attr", "marketingpreferenceTest");
+        TestGetPrefCodeFromKey("marketingpreferencefrequency100_114_0_0_2_attr", "marketingpreferencefrequency100");
+        TestGetPrefCodeFromKey("marketingpreferenceemailoptin_108_0_0_2_attr", "marketingpreferenceemailoptin");
+        TestGetPrefCodeFromKey("marketingpreferencesubscription3_118_0_0_2_attr", "marketingpreferencesubscription3");
+        TestGetPrefCodeFromKey("marketingpreferencesubscription_117_0_0_2_attr", "marketingpreferencesubscription");
+        TestGetPrefCodeFromKey("marketingpreferencefrequency_110_0_0_2_attr", "marketingpreferencefrequency");
+        TestGetPrefCodeFromKey("marketingpreferenceMagzines2_120_0_0_2_attr", "marketingpreferenceMagzines2");
+        TestGetPrefCodeFromKey("marketingpreferencefrequency99_112_0_0_2_attr", "marketingpreferencefrequency99");
+        TestGetPrefCodeFromKey("marketingpreferencefrequency11_111_0_692357_2_attr", "marketingpreferencefrequency11");
+
 	}
 	
 	private static void TestGetPrefCodeFromKey(string input, string expected) 
@@ -31,8 +48,14 @@ public class Program
 		// string input = "marketingpreferenceTest_1_115_0_0_2_attr";
 		string output = GetPrefCodeFromKey(input);
 		// string expected = "marketingpreferenceTest_1";
-		Console.WriteLine("Input: " + input + " Output: " + output);
-		if (expected == output) { Console.WriteLine("Success"); } else { Console.WriteLine("Failure"); }
+		if (expected == output) 
+        { 
+            // Console.WriteLine("Success"); 
+        } else 
+        {
+            Console.WriteLine("Failure"); 
+            Console.WriteLine("Input: " + input + " Output: " + output);
+        }
 	}
 	
 	private static string GetPrefCodeFromKey(string key)
