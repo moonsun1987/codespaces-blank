@@ -21,9 +21,6 @@ public class Program
         TestGetPrefCodeFromKey("walmartfrequency_113_85_691036_2_attr", "walmartfrequency");
         TestGetPrefCodeFromKey("marketingpreferenceemailoptin_107_65_691009_2_attr", "marketingpreferenceemailoptin");
         TestGetPrefCodeFromKey("marketingpreferencefrequency_109_74_691011_2_attr", "marketingpreferencefrequency");
-        
-
-		TestGetPrefCodeFromKey("marketingpreferenceTest_1_115_0_0_2_attr", "marketingpreferenceTest_1");
 
 		TestGetPrefCodeFromKey("marketingpreferenceemail_107_0_692313_2_attr", "marketingpreferenceemail");
         TestGetPrefCodeFromKey("marketingpreferenceTest_1_115_0_0_2_attr", "marketingpreferenceTest_1");
@@ -59,31 +56,30 @@ public class Program
 	}
 	
 	private static string GetPrefCodeFromKey(string key)
+    {
+        int count = key.Count(f => f == '_');
+        if (count < 1)
         {
-            int count = key.Count(f => f == '_');
-            Console.WriteLine(count);
-            if (count < 1)
-            {
-                return key;
-            }
-
-            if (count < 6)
-            {
-                return key.Split('_')[0];
-            }
-
-            string[] splits = key.Split('_');
-            StringBuilder sb = new StringBuilder();
-            count -= 5;
-            for (int i = 0; i < count; i++)
-            {
-                sb.Append(splits[i]);
-                if (i < count - 1)
-                {
-                    sb.Append('_');
-                }
-            }
-
-            return sb.ToString();
+            return key;
         }
+
+        if (count < 6)
+        {
+            return key.Split('_')[0];
+        }
+
+        string[] splits = key.Split('_');
+        StringBuilder sb = new StringBuilder();
+        count -= 5;
+        for (int i = 0; i < count; i++)
+        {
+            sb.Append(splits[i]);
+            if (i < count - 1)
+            {
+                sb.Append('_');
+            }
+        }
+
+        return sb.ToString();
+    }
 }
